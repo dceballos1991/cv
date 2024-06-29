@@ -1,4 +1,5 @@
-![cv]([https://github.com/BartoszJarocki/cv/assets/1017620/79bdb9fc-0b20-4d2c-aafe-0526ad4a71d2](https://utfs.io/f/9e589e0d-d9ff-4a1c-aab5-5cc9777f48cb-cb9b0m.PNG))
+![resume-screenshot](https://github.com/dceballos1991/cv/assets/37944338/3d98f71f-4e31-442d-8689-3df66f44d8ce)
+
 
 # Minimalist CV 
 Simple web app that renders minimalist CV with print-friendly layout.
