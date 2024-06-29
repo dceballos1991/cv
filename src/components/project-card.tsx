@@ -21,14 +21,22 @@ export function ProjectCard({ title, description, tags, link }: Props) {
         <div className="space-y-1">
           <CardTitle className="text-base">
             {link ? (
-              <a
-                href={link}
-                target="_blank"
-                className="inline-flex items-center gap-1 hover:underline"
-              >
-                {title}{" "}
-                <span className="size-1 rounded-full bg-green-500"></span>
-              </a>
+              <>
+                <a
+                  href={link}
+                  target="_blank"
+                  className="inline-flex items-center gap-1 hover:underline"
+                >
+                  {title}{" "}
+                  <span className="size-1 rounded-full bg-green-500"></span>
+                </a>
+                <span className="hidden font-mono text-xs text-muted-foreground print:block print:text-[12px]">
+                  {link
+                    ?.replace("https://", "")
+                    .replace("www.", "")
+                    .replace("/", "")}
+                </span>
+              </>
             ) : (
               title
             )}
@@ -45,7 +53,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
         <div className="mt-2 flex flex-wrap gap-1">
           {tags.map((tag) => (
             <Badge
-              className="px-1 py-0 text-[10px] print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
+              className="px-1 py-0 text-[10px] print:border-gray-200 print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
               variant="secondary"
               key={tag}
             >
