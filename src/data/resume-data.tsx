@@ -214,6 +214,7 @@ export const RESUME_DATA_ME = {
   avatarUrl:
     "https://utfs.io/f/9c90db2b-2ff9-4a4f-bc1b-c6d3a711620f-hz3ilt.jpg",
   personalWebsiteUrl: "https://github.com/dceballos1991",
+  position: "Mechanical Engineer",
   contact: {
     email: "dceballos1991@gmail.com",
     tel: "760-972-1272",
