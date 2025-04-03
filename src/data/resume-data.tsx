@@ -385,6 +385,201 @@ export const RESUME_DATA_TEAM_LEAD = {
   ],
 } as const;
 
+export const RESUME_DATA_TEAM_LEAD_FULL = {
+  name: "David Ceballos",
+  initials: "DC",
+  location: "Indio, California",
+  locationLink: "https://www.google.com/maps/place/Indio,+CA/",
+  about: "Sr. Frontend Engineer Team Lead",
+  aboutLong: "Sr. Frontend Engineer with Leadership experience.",
+  summary:
+    "Senior Frontend Engineer with UI/UX design expertise and proven team leadership experience. Leading sprint planning sessions, conducting code reviews, and coordinating cross-functional teams to deliver complex features on schedule. Building scalable, high-performance applications for thousands of concurrent users. Experienced in providing technical mentorship to junior engineers, conducting performance evaluations, and developing growth plans for team members. Skilled in organizing complex projects, and maintaining high standards for clean, maintainable code. Focused on optimizing web performance and creating engaging user experiences through animations and intuitive responsive/mobile-first interfaces.",
+  avatarUrl:
+    "https://utfs.io/f/9c90db2b-2ff9-4a4f-bc1b-c6d3a711620f-hz3ilt.jpg",
+  personalWebsiteUrl: "https://github.com/dceballos1991",
+  contact: {
+    email: "dceballos1991@gmail.com",
+    tel: "760-972-1272",
+    social: [
+      {
+        name: "GitHub",
+        url: "https://github.com/dceballos1991",
+        icon: GitHubIcon,
+      },
+      // {
+      //   name: "LinkedIn",
+      //   url: "https://www.linkedin.com/in/bjarocki/",
+      //   icon: LinkedInIcon,
+      // },
+      // {
+      //   name: "X",
+      //   url: "https://x.com/BartoszJarocki",
+      //   icon: XIcon,
+      // },
+    ],
+  },
+  education: [
+    {
+      school: "Cal Poly Pomona",
+      degree: "B.S. Mechanical Engineering - Magna Cum Laude",
+      start: "2010",
+      end: "2014",
+    },
+  ],
+  work: [
+    {
+      company: "Nifty Island",
+      link: "https://www.niftyisland.com/",
+      isRemote: true,
+      badges: [
+        "NextJs",
+        "TypeScript",
+        "React",
+        "Jest",
+        "ThreeJS",
+        "R3F",
+        "Web3",
+        "Crypto",
+        "TailwindCSS",
+      ],
+      title: "Sr. Frontend Engineer - UI/UX",
+      logo: ConsultlyLogo,
+      start: "2022",
+      end: null,
+      description:
+        "Architected a UGC frontend flow and a performance-focused 3D inspector using ThreeJS and R3F. Led cross-functional team implementation of a component library with comprehensive unit testing, reducing regressions and improving code quality. Implemented memoization and lazy loading techniques, achieving a 30% reduction in load times and significantly enhancing user experience. Mentored junior engineers on animation implementation and performance optimization techniques. Bootstrapped an internal Admin panel dashboard, implementing crucial features like content moderation to streamline administrative tasks.",
+    },
+    {
+      company: "Tugboat Holdings",
+      link: "https://www.tugboatholdings.com/",
+      isRemote: true,
+      badges: [
+        "TypeScript",
+        "React",
+        "Material UI",
+        "Jest",
+        "HotJar",
+        "SPA",
+        "Cypress",
+        "End-to-End Testing",
+      ],
+      title: "Sr. Frontend Engineer",
+      logo: ParabolLogo,
+      start: "2020",
+      end: "2022",
+      description:
+        "Spearheaded the frontend development of the company's first two product applications from inception to launch, leading a team of three developers. Established code standards and review processes that improved quality and reduced technical debt. Engineered a recursive component rendering engine enabling non-technical staff to drive multiple application experience flows via JSON files. Coordinated sprint planning and resource allocation to ensure on-time delivery of features. Optimized UX through user behavior analysis using HotJar, resulting in a 9% increase in funnel conversion rates and reduced bottlenecks.",
+    },
+    {
+      company: "ReadyLink Healthcare",
+      link: "https://www.linkedin.com/company/readyrn/",
+      isRemote: false,
+      badges: [
+        "React",
+        "Material UI",
+        "SPA",
+        "Virtualization",
+        "Jest",
+        "Cypress",
+        "Unit Testing",
+        "Integration Testing",
+        "End-to-End Testing",
+      ],
+      title: "Frontend Engineer",
+      logo: ConsultlyLogo,
+      start: "2019",
+      end: "2020",
+      description:
+        "Built and maintained a React-based SPA with Material UI. Implemented virtualization techniques to optimize the scheduling page, efficiently rendering hundreds of DOM elements, which significantly improved user satisfaction and reduced load times. Maintained comprehensive testing coverage, including unit, integration, and end-to-end tests, ensuring high-quality, reliable code.",
+    },
+    {
+      company: "Wilorco (Strike Technology)",
+      link: "https://www.wilorco.com/",
+      isRemote: false,
+      badges: [
+        "Python",
+        "OpenCV",
+        "Automation",
+        "Document Processing",
+        "Software Development",
+      ],
+      title: "Frontend Engineer",
+      logo: ParabolLogo,
+      start: "2016",
+      end: "2020",
+      description:
+        "Proposed and developed innovative redlining software to automate the comparison and redlining process of documentation. Utilized Python and OpenCV for document analysis and processing. This initiative significantly increased productivity and reduced human error in document processing, streamlining workflows and improving accuracy.",
+    },
+    {
+      company: "SacTec Solar",
+      link: "https://www.sactecsolar.com/",
+      isRemote: false,
+      badges: ["MyDAQ", "Python", "JQuery", "Sensor Processing", "Javascript"],
+      title: "Mechanical Engineer / Jr Software Developer",
+      logo: ParabolLogo,
+      start: "2014",
+      end: "2016",
+      description:
+        "Started as a Mechanical Engineer, contributing to CAD designs in SolidWorks and collaborating with manufacturing on an ISO containerized solar deployment. Transitioned into a Jr. Software Developer by taking on internal tooling projects, using Python for solar platform data acquisition and building simple UI tools to support engineering and operations teams.",
+    },
+  ],
+  skills: [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Three.js",
+    "Performance Optimization",
+    "UI/UX Design",
+    "TailwindCSS",
+    "State Management",
+    "RESTful APIs",
+    "GraphQL",
+    "Jest",
+    "Cypress",
+    "End-to-End Testing",
+    "Virtualization",
+    "Single Page Applications (SPA)",
+    "Responsive Design",
+    "CSS",
+    "Git",
+    "Python",
+    "Frontend Architecture",
+    "Figma",
+  ],
+  projects: [
+    {
+      title: "PiP Anything",
+      techStack: [
+        "JavaScript",
+        "Chrome Extension",
+        "Service Workers",
+        "Chrome APIs",
+        "tabCapture",
+      ],
+      description:
+        "Developed a Chrome extension that allows users to convert any tab into a picture-in-picture pop-out window, enhancing productivity. This ongoing project leverages JavaScript, service workers, and Chrome APIs like tabCapture to provide a seamless multitasking experience.",
+      logo: ParabolLogo,
+      link: undefined,
+    },
+    {
+      title: "Can't Have It All",
+      techStack: ["NextJs", "AI", "React", "State Management"],
+      description:
+        "Created an interactive web application using Next.js and OpenAI's API, featuring three switches where only two can be active simultaneously. Implemented query state management to enable easy sharing of results. The project demonstrates integration of AI technologies with modern web development practices.",
+      logo: ParabolLogo,
+      link: "https://canthaveitall.com",
+    },
+    {
+      title: "PID Feedback Control System",
+      techStack: ["Control Systems", "Arduino", "C++", "UI Design"],
+      description:
+        "Designed and built a PID feedback control system with a user interface that accurately controlled the voltage delivered to a DC motor. The system maintained a specified RPM across a range of unexpected motor loads, showcasing skills in control systems, embedded programming, and UI design.",
+      logo: ParabolLogo,
+      link: undefined,
+    },
+  ],
+} as const;
+
 export const RESUME_DATA_DESIGN_ENG = {
   name: "David Ceballos",
   initials: "DC",
