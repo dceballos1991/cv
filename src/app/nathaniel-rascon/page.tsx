@@ -1,0 +1,284 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { CommandMenu } from "@/components/command-menu";
+import { Metadata } from "next";
+import { Section } from "@/components/ui/section";
+import {
+  GlobeIcon,
+  MailIcon,
+  PhoneIcon,
+  AwardIcon,
+  GraduationCapIcon,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { NATHANIEL_RASCON_DATA } from "@/data/nathaniel-rascon";
+
+export const metadata: Metadata = {
+  title: `${NATHANIEL_RASCON_DATA.name} | ${NATHANIEL_RASCON_DATA.about}`,
+  description: NATHANIEL_RASCON_DATA.summary,
+};
+
+export default function Page() {
+  return (
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:px-3 print:py-0 md:p-16">
+      <section className="mx-auto w-full max-w-3xl space-y-8 bg-white print:space-y-4">
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <div className="flex-1 space-y-1.5">
+              <h1 className="text-2xl font-bold">
+                {NATHANIEL_RASCON_DATA.name}
+                <span className="inline max-w-lg text-pretty font-mono text-sm print:hidden">
+                  &nbsp;-&nbsp;{NATHANIEL_RASCON_DATA.about}
+                </span>
+              </h1>
+
+              <p className="max-w-lg text-pretty font-mono text-sm print:hidden">
+                {NATHANIEL_RASCON_DATA.aboutLong}
+              </p>
+              {/* Print only section */}
+              <p className="hidden max-w-lg text-pretty font-mono text-sm print:block print:max-w-full print:text-[12px]">
+                {NATHANIEL_RASCON_DATA.aboutLong}
+              </p>
+              <div className="hidden w-full gap-x-6 pt-0 font-mono text-sm text-muted-foreground print:flex print:text-[12px]">
+                <p className="items-center text-pretty font-mono text-xs text-muted-foreground">
+                  <a
+                    className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                    href={NATHANIEL_RASCON_DATA.locationLink}
+                    target="_blank"
+                  >
+                    <GlobeIcon className="size-3" />
+                    {NATHANIEL_RASCON_DATA.location}
+                  </a>
+                </p>
+                {NATHANIEL_RASCON_DATA.contact.email ? (
+                  <a
+                    href={`mailto:${NATHANIEL_RASCON_DATA.contact.email}`}
+                    className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                  >
+                    <MailIcon className="size-3" />
+                    {NATHANIEL_RASCON_DATA.contact.email}
+                  </a>
+                ) : null}
+                {NATHANIEL_RASCON_DATA.contact.tel ? (
+                  <a
+                    href={`tel:${NATHANIEL_RASCON_DATA.contact.tel}`}
+                    className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                  >
+                    <PhoneIcon className="size-3" />
+                    {NATHANIEL_RASCON_DATA.contact.tel}
+                  </a>
+                ) : null}
+              </div>
+              {/* Print only section - End*/}
+              {/* Web only section */}
+              <p className="max-w-md items-center text-pretty pt-1 font-mono text-xs text-muted-foreground print:hidden">
+                <a
+                  className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                  href={NATHANIEL_RASCON_DATA.locationLink}
+                  target="_blank"
+                >
+                  <GlobeIcon className="size-3" />
+                  {NATHANIEL_RASCON_DATA.location}
+                </a>
+              </p>
+              <div className="flex items-center gap-x-1 font-mono text-sm text-muted-foreground print:hidden">
+                {NATHANIEL_RASCON_DATA.contact.email ? (
+                  <Button
+                    className="size-8"
+                    variant="outline"
+                    size="icon"
+                    asChild
+                  >
+                    <a href={`mailto:${NATHANIEL_RASCON_DATA.contact.email}`}>
+                      <MailIcon className="size-4" />
+                    </a>
+                  </Button>
+                ) : null}
+                {NATHANIEL_RASCON_DATA.contact.tel ? (
+                  <Button
+                    className="size-8"
+                    variant="outline"
+                    size="icon"
+                    asChild
+                  >
+                    <a href={`tel:${NATHANIEL_RASCON_DATA.contact.tel}`}>
+                      <PhoneIcon className="size-4" />
+                    </a>
+                  </Button>
+                ) : null}
+                {NATHANIEL_RASCON_DATA.contact.social.map((social) => (
+                  <Button
+                    key={social.name}
+                    className="size-8"
+                    variant="outline"
+                    size="icon"
+                    asChild
+                  >
+                    <a href={social.url}>
+                      <social.icon className="size-4" />
+                    </a>
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            {NATHANIEL_RASCON_DATA.avatarUrl && (
+              <Avatar className="size-28 print:hidden">
+                <AvatarImage
+                  alt={NATHANIEL_RASCON_DATA.name}
+                  src={NATHANIEL_RASCON_DATA.avatarUrl}
+                />
+                <AvatarFallback>
+                  {NATHANIEL_RASCON_DATA.initials}
+                </AvatarFallback>
+              </Avatar>
+            )}
+            {/* Web only section - End*/}
+          </div>
+
+          <p className="text-pretty pt-2 font-mono text-sm text-muted-foreground print:pt-0 print:text-[12px]">
+            {NATHANIEL_RASCON_DATA.summary}
+          </p>
+        </div>
+
+        <div className="flex gap-x-8 print:gap-x-4">
+          <div className="flex flex-[2] flex-col">
+            <Section>
+              <h2 className="text-xl font-bold">Experience</h2>
+              {NATHANIEL_RASCON_DATA.work.map((work) => {
+                return (
+                  <Card key={`${work.company}-${work.start}`}>
+                    <CardHeader>
+                      <div className="flex items-center justify-between gap-x-2 text-base">
+                        <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+                          {work.link ? (
+                            <a className="hover:underline" href={work.link}>
+                              {work.company}
+                            </a>
+                          ) : (
+                            work.company
+                          )}
+                          {work.isRemote && (
+                            <Badge
+                              variant="secondary"
+                              className="bg-transparent align-middle text-xs print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
+                            >
+                              Remote
+                            </Badge>
+                          )}
+                        </h3>
+                        <div className="text-sm tabular-nums text-gray-500">
+                          {work.start} - {work.end ?? "Present"}
+                        </div>
+                      </div>
+
+                      <h4 className="font-mono text-sm leading-none print:text-[12px]">
+                        {work.title}
+                        {work.location && (
+                          <span className="text-muted-foreground">
+                            {" "}
+                            · {work.location}
+                          </span>
+                        )}
+                      </h4>
+                    </CardHeader>
+                    <CardContent className="mt-2 text-xs print:text-[10px]">
+                      {work.description}
+                    </CardContent>
+                    <span className="inline-flex flex-wrap gap-1">
+                      {work.badges.map((badge) => (
+                        <Badge
+                          variant="secondary"
+                          className="align-middle text-xs print:border-gray-200 print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
+                          key={badge}
+                        >
+                          {badge}
+                        </Badge>
+                      ))}
+                    </span>
+                  </Card>
+                );
+              })}
+            </Section>
+          </div>
+
+          <div className="flex flex-1 shrink-0 flex-col gap-y-4">
+            <Section>
+              <h2 className="text-xl font-bold">Education</h2>
+              <div className="-mx-3 grid grid-cols-1 gap-3 print:gap-2">
+                {NATHANIEL_RASCON_DATA.education.map((edu) => {
+                  return (
+                    <Card
+                      key={edu.school}
+                      className="flex flex-col overflow-hidden border border-muted p-3"
+                    >
+                      <CardHeader className="p-0">
+                        <div className="flex items-center gap-2">
+                          <GraduationCapIcon className="size-4 text-blue-600" />
+                          <h3 className="text-sm font-semibold leading-none">
+                            {edu.degree}
+                          </h3>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="mt-2 p-0 text-xs text-muted-foreground print:text-[10px]">
+                        <p>{edu.school}</p>
+                        <p className="text-gray-500">
+                          {edu.location} · {edu.start} - {edu.end}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </Section>
+
+            <Section className="scroll-mb-16">
+              <h2 className="text-xl font-bold">Highlights</h2>
+              <div className="-mx-3 grid grid-cols-1 gap-3 print:gap-2">
+                {NATHANIEL_RASCON_DATA.highlights.map((highlight) => {
+                  return (
+                    <Card
+                      key={highlight.title}
+                      className="flex flex-col overflow-hidden border border-muted p-3"
+                    >
+                      <CardHeader className="p-0">
+                        <div className="flex items-center gap-2">
+                          <AwardIcon className="size-4 text-green-600" />
+                          <h3 className="text-sm font-semibold leading-none">
+                            {highlight.title}
+                          </h3>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="mt-2 p-0 text-xs text-muted-foreground print:text-[10px]">
+                        {highlight.description}
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </Section>
+
+            <Section>
+              <h2 className="text-xl font-bold">Skills</h2>
+              <div className="flex flex-wrap gap-1">
+                {NATHANIEL_RASCON_DATA.skills.map((skill) => {
+                  return (
+                    <Badge
+                      className="print:border-gray-200 print:text-[10px]"
+                      key={skill}
+                    >
+                      {skill}
+                    </Badge>
+                  );
+                })}
+              </div>
+            </Section>
+          </div>
+        </div>
+      </section>
+
+      <CommandMenu links={[]} />
+    </main>
+  );
+}
