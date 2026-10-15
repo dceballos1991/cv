@@ -78,3 +78,36 @@
 .print-force-new-page {
   page-break-before: always;
 }
+
+.invoice-sheet {
+  page: invoice;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@page invoice {
+  size: letter;
+  margin: 0;
+}
+
+@media print {
+  .invoice-app {
+    background: #fff !important;
+  }
+
+  .invoice-app-chrome {
+    display: none !important;
+  }
+
+  .invoice-preview-frame {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  .invoice-sheet {
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+}

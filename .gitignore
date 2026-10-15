@@ -37,3 +37,5 @@ next-env.d.ts
 
 # ide
 .idea
+# private: anything that should not be public (invoices, client data, other people's resumes)
+/private/
